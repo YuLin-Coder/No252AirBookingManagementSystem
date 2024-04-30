@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" 
+    "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+ 
+<!-- 此文件只是mybatis 的数据库自动生成映射文件，实体类，接口等方法的，发布时，不用提交此文件，也可删除 -->
+ 
+<generatorConfiguration>
+    <!-- 引用的jdbc的类路径，这里将jdbc jar和generator的jar包放在一起了 -->
+    <classPathEntry location="F:\jars\mysql-connector-java-5.1.7-bin.jar"/>
+    <context id="context1" targetRuntime="MyBatis3Simple">
+        
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="false"/>
+            <property name="suppressDate" value="true" /> <!-- 是否生成注释代时间戳-->  
+          </commentGenerator>
+        
+        <!-- 指定的jdbc的连接信息 -->
+        <jdbcConnection 
+            driverClass="com.mysql.jdbc.Driver" 
+            connectionURL="jdbc:mysql://127.0.0.1:3306/db_bgm0hangban" 
+            userId="admin" 
+            password="admin" />
+        
+        <!-- 类型转换 -->  
+        <javaTypeResolver>  
+            <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->  
+            <property name="forceBigDecimals" value="false"/>  
+        </javaTypeResolver>  
+        
+        <!-- 生成实体类地址 Model -->       
+        <javaModelGenerator targetPackage="com.model" targetProject="bgm0hangban\src">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        
+        <!-- 生成map.xml文件 XML -->     
+        <sqlMapGenerator targetPackage="com.mapper" targetProject="bgm0hangban\src">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+        
+        <!-- 生成map.xml对应client，也就是接口DAO -->  
+        <javaClientGenerator type="XMLMAPPER"
+            targetPackage="com.mapper" targetProject="bgm0hangban\src">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+        
+        <!-- 
+            schema：数据库名 
+            tableName：对应的数据库表 
+            domainObjectName：要生成的实体类 
+            enable*ByExample： 是否生成 example类   
+        -->  
+        <table tableName="t_admin" domainObjectName="Admin"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_bumen" domainObjectName="Bumen"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_buyuan" domainObjectName="Buyuan"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_buzhi" domainObjectName="Buzhi"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_byumen" domainObjectName="Byumen"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_byuyuan" domainObjectName="Byuyuan"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_byuzhi" domainObjectName="Byuzhi"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_ggpinglun" domainObjectName="Ggpinglun"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_ggtype" domainObjectName="Ggtype"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_gonggao" domainObjectName="Gonggao"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_jcbiaoti" domainObjectName="Jcbiaoti"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_jcdaohang" domainObjectName="Jcdaohang"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_jcpeizhi" domainObjectName="Jcpeizhi"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_rizhi" domainObjectName="Rizhi"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_role" domainObjectName="Role"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_shuju" domainObjectName="Shuju"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_sjduochu" domainObjectName="Sjduochu"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_sjjianchu" domainObjectName="Sjjianchu"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_sjlaiyuan" domainObjectName="Sjlaiyuan"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_sjleixing" domainObjectName="Sjleixing"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_sjpinglun" domainObjectName="Sjpinglun"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_sjqita" domainObjectName="Sjqita"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_sjshaochu" domainObjectName="Sjshaochu"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_sjxingtai" domainObjectName="Sjxingtai"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_user" domainObjectName="User"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_uxinxi" domainObjectName="Uxinxi"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_uxtype" domainObjectName="Uxtype"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="t_uyijian" domainObjectName="Uyijian"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+		<table tableName="t_yhrole" domainObjectName="Yhrole"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+		<table tableName="t_yonghu" domainObjectName="Yonghu"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+		<table tableName="t_yxinxi" domainObjectName="Yxinxi"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+		<table tableName="t_yxtype" domainObjectName="Yxtype"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+		<table tableName="t_yyijian" domainObjectName="Yyijian"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+    </context>
+</generatorConfiguration>
